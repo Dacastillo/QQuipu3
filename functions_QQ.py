@@ -295,7 +295,7 @@ def block_encoding_amplification(N,d,H,beta):
     G.append(circ_f.inverse(), range(2*N+1))
     entropy, circuit, state_vector= quantum_haar_state(N, d)
     circuit.add_register(QuantumRegister(N+1))
-    for j in range(20): circuit.compose(G, range(2*N+1))
+    for j in range(10): circuit.compose(G, range(2*N+1))
     circuit.barrier()
     circuit.add_register(ClassicalRegister(N+1))
     circuit.measure(range(N,2*N+1), range(N+1))
